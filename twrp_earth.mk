@@ -33,7 +33,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := earth
 PRODUCT_NAME := twrp_earth
-PRODUCT_BRAND := Android
+PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 12c
 PRODUCT_MANUFACTURER := xiaomi
 
