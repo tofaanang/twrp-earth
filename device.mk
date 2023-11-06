@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/infinix/X695C
+LOCAL_PATH := device/xiaomi/earth
 
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
