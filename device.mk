@@ -83,4 +83,4 @@ PRODUCT_PACKAGES += \
     
 # OEM otacerts
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(LOCAL_PATH)/security/earth
+    $(LOCAL_PATH)/security/xiaomi
