@@ -642,8 +642,3 @@
     }
   ]
 }
-      "Name": "Dex2OatBootComplete",
-      "Profiles": [ "SCHED_SP_BACKGROUND" ]
-    }
-  ]
-}
