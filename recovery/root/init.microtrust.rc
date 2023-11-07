@@ -21,11 +21,10 @@ service teei_daemon /vendor/bin/teei_daemon \
     -t 98fb95bcb4bf42d26473eae48690d7ea \
     -t 7b66512021214487ba710a51d7ea78fe \
     -t 09010000000000000000000000000000
-    class core
-    user system
-    group system
+ user root
+    group root
     disabled
-   # oneshot
+    seclabel u:r:recovery:s0
 
 on boot
     chown system system /sys/bus/platform/devices/utos/dcih_notify_test
@@ -75,7 +74,7 @@ on load_persist_props_action
     chmod 0755 /data/vendor/thh/tee_05
     chown system system /data/vendor/thh/tee_05
 
-    chmod 0755 /data/vendor/thh/tee_06
+chmod 0755 /data/vendor/thh/tee_06
     chown system system /data/vendor/thh/tee_06
     chmod 0755 /data/vendor/thh/tee_07
     chown system system /data/vendor/thh/tee_07
@@ -150,7 +149,7 @@ on property:vold.decrypt=trigger_restart_framework
     chmod 0755 /data/vendor/thh/tee_05
     chown system system /data/vendor/thh/tee_05
 
-    chmod 0755 /data/vendor/thh/tee_06
+chmod 0755 /data/vendor/thh/tee_06
     chown system system /data/vendor/thh/tee_06
     chmod 0755 /data/vendor/thh/tee_07
     chown system system /data/vendor/thh/tee_07
@@ -191,12 +190,12 @@ on post-fs
     chmod 0771 /mnt/vendor/persist
     restorecon_recursive /mnt/vendor/persist
 
-    mkdir /mnt/vendor/persist/rpmb
+mkdir /mnt/vendor/persist/rpmb
     chown system system /mnt/vendor/persist/rpmb
     chmod 0771 /mnt/vendor/persist/rpmb
     restorecon_recursive /mnt/vendor/persist/rpmb
 
-    # Set other rpmb
+# Set other rpmb
     mkdir /persist/rpmb
     mkdir /vendor/persist/rpmb
     chmod 0771 /persist/rpmb
@@ -238,4 +237,4 @@ on property:vendor.crypto.fake_encrypt=1 && property:vold.post_fs_data_done=1
     setprop vendor.soter.teei.crypto.state unencrypted
 
 on post-fs-data
-    setprop vendor.soter.teei.logini "start"
+	setprop vendor.soter.teei.logini "start"
