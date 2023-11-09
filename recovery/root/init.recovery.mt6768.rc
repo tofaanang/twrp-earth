@@ -47,14 +47,7 @@ on fs
 
     install_keyring
 
-service keystore_auth /system/bin/keystore_auth
-    user system
-    group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
-
-service keystore2_auth /system/bin/keystore_auth
+service keystore2 /system/bin/keystore2
     user system
     group root
     disabled
